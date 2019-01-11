@@ -1,0 +1,15 @@
+<resources>
+
+
+    <style name="AnimDown" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_out</item>
+    </style>
+    <!--屏幕下方弹出的菜单-->
+    <style name="animation_bottom_menu">
+        <item name="android:windowEnterAnimation">@anim/window_up_in</item>
+        <item name="android:windowExitAnimation">@anim/window_down_off</item>
+    </style>
+
+
+</resources>

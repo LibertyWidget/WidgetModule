@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 上拉加载 -->
+    <item name="gridview" type="id" />
+    <item name="webview" type="id" />
+    <item name="scrollview" type="id" />
+    <!-- View TAG,不够再加 -->
+    <item name="tag_0" type="id" />
+    <item name="tag_1" type="id" />
+</resources>
