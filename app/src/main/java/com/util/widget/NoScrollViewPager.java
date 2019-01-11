@@ -1,4 +1,4 @@
-package com.utilities.widget;
+package com.util.widget;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

@@ -1,4 +1,4 @@
-package com.utilities.widget;
+package com.util.widget;
 
 import android.os.Bundle;
 import android.os.Handler;

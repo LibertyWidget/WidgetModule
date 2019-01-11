@@ -1,4 +1,4 @@
-package com.utilities.widget;
+package com.util.widget;
 
 import android.content.Context;
 import android.os.Build;
@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.util.widget.R;
 
 public class TabView extends LinearLayout {
     public TabView(Context context) {
