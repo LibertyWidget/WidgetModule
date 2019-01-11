@@ -1,6 +1,8 @@
 # WidgetModule
 
-	The current project is for a faster personal construction project, and if there is a problem with the village, please submit the question. If you need it, please download it. Thank you.
+	The current project is for a faster personal construction project, 
+	and if there is a problem with the village, please submit the question.
+	If you need it, please download it. Thank you.
 
 
 How to
