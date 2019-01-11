@@ -10,10 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- *
- */
-
 public abstract class BaseFragment extends Fragment {
     private View mRootView;
     protected final Handler mHandler = new Handler(Looper.getMainLooper());

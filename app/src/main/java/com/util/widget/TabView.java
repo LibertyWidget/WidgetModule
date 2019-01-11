@@ -13,8 +13,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.util.widget.R;
-
 public class TabView extends LinearLayout {
     public TabView(Context context) {
         super(context);
@@ -42,12 +40,6 @@ public class TabView extends LinearLayout {
         this.addView(inflate);
     }
 
-    /**
-     * 选中
-     *
-     * @param resId 图标
-     * @param resid 文字
-     */
     public void setTabRes(@DrawableRes int resId, @StringRes int resid, @ColorInt int color) {
         if (null != ivTabView) {
             ivTabView.setImageResource(resId);
