@@ -1,0 +1,5 @@
+<resources>
+    <string name="rationale_ask">没有请求的权限，此应用可能无法正常工作。</string>
+    <string name="rationale_ask_again">没有请求的权限，此应用程序可能无法正常工作。打开应用程序设置屏幕以修改应用程序权限。</string>
+    <string name="title_settings_dialog">需要权限</string>
+</resources>
