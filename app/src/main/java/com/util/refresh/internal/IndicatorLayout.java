@@ -58,8 +58,8 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 		int inAnimResId, outAnimResId;
 		switch (mode) {
 			case PULL_FROM_END:
-				inAnimResId = R.anim.slide_in_from_bottom;
-				outAnimResId = R.anim.slide_out_to_bottom;
+				inAnimResId = R.anim.util_slide_in_from_bottom;
+				outAnimResId = R.anim.util_slide_out_to_bottom;
 				setBackgroundResource(R.drawable.util_indicator_bg_bottom);
 
 				// Rotate Arrow so it's pointing the correct way
@@ -70,8 +70,8 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 				break;
 			default:
 			case PULL_FROM_START:
-				inAnimResId = R.anim.slide_in_from_top;
-				outAnimResId = R.anim.slide_out_to_top;
+				inAnimResId = R.anim.util_slide_in_from_top;
+				outAnimResId = R.anim.util_slide_out_to_top;
 				setBackgroundResource(R.drawable.util_indicator_bg_top);
 				break;
 		}
