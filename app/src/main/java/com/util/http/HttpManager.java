@@ -2,6 +2,7 @@ package com.util.http;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.annotation.Nullable;
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -99,23 +100,28 @@ public class HttpManager {
      * @param actionUrl 接口地址
      * @param paramsMap 请求参数
      */
-    private Response requestGetBySync(String actionUrl, HashMap<String, String> paramsMap) {
+    private Response requestGetBySync(String actionUrl, @Nullable HashMap<String, String> paramsMap) {
         StringBuilder tempParams = new StringBuilder();
         try {
-            //处理参数
-            int pos = 0;
-            for (String key : paramsMap.keySet()) {
-                if (pos > 0) {
-                    tempParams.append("&");
+            Request request = null;
+            if (null != paramsMap) {
+                //处理参数
+                int pos = 0;
+                for (String key : paramsMap.keySet()) {
+                    if (pos > 0) {
+                        tempParams.append("&");
+                    }
+                    //对参数进行URLEncoder
+                    tempParams.append(String.format("%s=%s", key, URLEncoder.encode(paramsMap.get(key), "utf-8")));
+                    pos++;
                 }
-                //对参数进行URLEncoder
-                tempParams.append(String.format("%s=%s", key, URLEncoder.encode(paramsMap.get(key), "utf-8")));
-                pos++;
+                //补全请求地址
+                String requestUrl = String.format("%s?%s", actionUrl, tempParams.toString());
+                //创建一个请求
+                request = addHeaders().url(requestUrl).build();
+            } else {
+                request = addHeaders().url(actionUrl).build();
             }
-            //补全请求地址
-            String requestUrl = String.format("%s?%s", actionUrl, tempParams.toString());
-            //创建一个请求
-            Request request = addHeaders().url(requestUrl).build();
             //创建一个Call
             final Call call = mOkHttpClient.newCall(request);
             //执行请求
@@ -131,31 +137,36 @@ public class HttpManager {
      * @param actionUrl 接口地址
      * @param paramsMap 请求参数
      */
-    private Response requestPostBySync(String actionUrl, HashMap<String, String> paramsMap) {
+    private Response requestPostBySync(String actionUrl, @Nullable HashMap<String, String> paramsMap) {
         try {
-            //处理参数
-            StringBuilder tempParams = new StringBuilder();
-            int pos = 0;
-            for (String key : paramsMap.keySet()) {
-                if (pos > 0) {
-                    tempParams.append("&");
+            Request request = null;
+            if (null != paramsMap) {
+                //处理参数
+                StringBuilder tempParams = new StringBuilder();
+                int pos = 0;
+                for (String key : paramsMap.keySet()) {
+                    if (pos > 0) {
+                        tempParams.append("&");
+                    }
+                    tempParams.append(String.format("%s=%s", key, URLEncoder.encode(paramsMap.get(key), "utf-8")));
+                    pos++;
                 }
-                tempParams.append(String.format("%s=%s", key, URLEncoder.encode(paramsMap.get(key), "utf-8")));
-                pos++;
-            }
-            //补全请求地址
-            String requestUrl = String.format("%s", actionUrl);
+                //补全请求地址
+                String requestUrl = String.format("%s", actionUrl);
 
-            //生成参数
-            String params = tempParams.toString();
-            //创建一个请求实体对象 RequestBody
-            RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, params);
-            //创建一个请求
-            final Request request = addHeaders().url(requestUrl).post(body).build();
-            //创建一个Call
-            final Call call = mOkHttpClient.newCall(request);
-            //执行请求
-            return call.execute();
+                //生成参数
+                String params = tempParams.toString();
+                //创建一个请求实体对象 RequestBody
+                RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, params);
+                //创建一个请求
+                request = addHeaders().url(requestUrl).post(body).build();
+                //创建一个Call
+                final Call call = mOkHttpClient.newCall(request);
+                //执行请求
+                return call.execute();
+            } else {
+                return null;
+            }
         } catch (Exception ignored) {
             return null;
         }
@@ -167,23 +178,27 @@ public class HttpManager {
      * @param actionUrl 接口地址
      * @param paramsMap 请求参数
      */
-    private Response requestPostBySyncWithForm(String actionUrl, HashMap<String, String> paramsMap) {
+    private Response requestPostBySyncWithForm(String actionUrl, @Nullable HashMap<String, String> paramsMap) {
         try {
-            //创建一个FormBody.Builder
-            JSONObject jsonArray = new JSONObject();
-            for (String key : paramsMap.keySet()) {
-                //追加表单信息
-                jsonArray.put(key, paramsMap.get(key));
+            if (null != paramsMap) {
+                //创建一个FormBody.Builder
+                JSONObject jsonArray = new JSONObject();
+                for (String key : paramsMap.keySet()) {
+                    //追加表单信息
+                    jsonArray.put(key, paramsMap.get(key));
+                }
+                RequestBody body = RequestBody.create(JSON, jsonArray.toString());
+                //补全请求地址
+                String requestUrl = String.format("%s", actionUrl);
+                //创建一个请求
+                final Request request = addHeaders().url(requestUrl).post(body).build();
+                //创建一个Call
+                final Call call = mOkHttpClient.newCall(request);
+                //执行请求
+                return call.execute();
+            } else {
+                return null;
             }
-            RequestBody body = RequestBody.create(JSON, jsonArray.toString());
-            //补全请求地址
-            String requestUrl = String.format("%s", actionUrl);
-            //创建一个请求
-            final Request request = addHeaders().url(requestUrl).post(body).build();
-            //创建一个Call
-            final Call call = mOkHttpClient.newCall(request);
-            //执行请求
-            return call.execute();
         } catch (Exception ignored) {
             return null;
         }
@@ -221,7 +236,6 @@ public class HttpManager {
      * @param callBack  请求返回数据回调
      */
     private Call requestGetByAsync(String actionUrl, HashMap<String, String> paramsMap, final ReqCallBack callBack) {
-
         try {
             Request request = null;
             if (null != paramsMap) {
@@ -239,8 +253,6 @@ public class HttpManager {
             } else {
                 request = addHeaders().url(actionUrl).build();
             }
-
-
             final Call call = mOkHttpClient.newCall(request);
             call.enqueue(new Callback() {
                 @Override
