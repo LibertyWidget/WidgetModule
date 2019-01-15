@@ -48,7 +48,7 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 		super(context);
 		mArrowImageView = new ImageView(context);
 
-		Drawable arrowD = getResources().getDrawable(R.drawable.indicator_arrow);
+		Drawable arrowD = getResources().getDrawable(R.drawable.util_indicator_arrow);
 		mArrowImageView.setImageDrawable(arrowD);
 
 		final int padding = getResources().getDimensionPixelSize(R.dimen.indicator_internal_padding);
@@ -60,7 +60,7 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 			case PULL_FROM_END:
 				inAnimResId = R.anim.slide_in_from_bottom;
 				outAnimResId = R.anim.slide_out_to_bottom;
-				setBackgroundResource(R.drawable.indicator_bg_bottom);
+				setBackgroundResource(R.drawable.util_indicator_bg_bottom);
 
 				// Rotate Arrow so it's pointing the correct way
 				mArrowImageView.setScaleType(ScaleType.MATRIX);
@@ -72,7 +72,7 @@ public class IndicatorLayout extends FrameLayout implements AnimationListener {
 			case PULL_FROM_START:
 				inAnimResId = R.anim.slide_in_from_top;
 				outAnimResId = R.anim.slide_out_to_top;
-				setBackgroundResource(R.drawable.indicator_bg_top);
+				setBackgroundResource(R.drawable.util_indicator_bg_top);
 				break;
 		}
 

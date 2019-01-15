@@ -34,7 +34,7 @@ public class TabView extends LinearLayout {
     private BaseTextView ivTabTextView;
 
     public void init(Context context) {
-        View inflate = LayoutInflater.from(context).inflate(R.layout.tab_view_layout, null);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.util_tab_view_layout, null);
         this.ivTabView = inflate.findViewById(R.id.ivTabView);
         this.ivTabTextView = inflate.findViewById(R.id.ivTabTextView);
         this.addView(inflate);

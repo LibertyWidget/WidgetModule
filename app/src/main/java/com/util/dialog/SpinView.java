@@ -26,7 +26,7 @@ public class SpinView extends ImageView {
     }
 
     private void init() {
-        setImageResource(R.drawable.ic_loading_progress);
+        setImageResource(R.drawable.util_ic_loading_progress);
         mFrameTime = 1000 / 12;
         mUpdateViewRunnable = new Runnable() {
             @Override

@@ -121,7 +121,7 @@ public class RotateLoadingLayout extends LoadingLayout
 	@Override
 	protected int getDefaultDrawableResId()
 	{
-		return R.drawable.public_fresh;
+		return R.drawable.util_public_fresh;
 	}
 
 }

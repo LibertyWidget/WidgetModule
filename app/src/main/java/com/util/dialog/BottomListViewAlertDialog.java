@@ -106,7 +106,7 @@ public class BottomListViewAlertDialog {
     }
 
     private View init(Context context) {
-        View inflate = LayoutInflater.from(context).inflate(R.layout.bottom_list_view_layout, null);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.util_bottom_list_view_layout, null);
         this.mListView = inflate.findViewById(R.id.listView);
         this.bottomVisibility = inflate.findViewById(R.id.bottomVisibility);
         this.mTitleView = inflate.findViewById(R.id.titleView);

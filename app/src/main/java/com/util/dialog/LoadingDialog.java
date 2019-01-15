@@ -189,7 +189,7 @@ public class LoadingDialog {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             requestWindowFeature(Window.FEATURE_NO_TITLE);
-            setContentView(R.layout.loading_progress_layout);
+            setContentView(R.layout.util_loading_progress_layout);
 
             Window window = getWindow();
             if (null != window) {

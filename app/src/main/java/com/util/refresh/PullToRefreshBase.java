@@ -1470,7 +1470,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 
         private int mIntValue;
 
-        // The modeInt values need to match those from attrs.xml
+        // The modeInt values need to match those from util_attrs.xml
         Mode(int modeInt) {
             mIntValue = modeInt;
         }

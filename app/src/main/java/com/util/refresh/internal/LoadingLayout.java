@@ -61,11 +61,11 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 
         switch (scrollDirection) {
             case HORIZONTAL:
-                LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_horizontal, this);
+                LayoutInflater.from(context).inflate(R.layout.util_pull_to_refresh_header_horizontal, this);
                 break;
             case VERTICAL:
             default:
-                LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_vertical, this);
+                LayoutInflater.from(context).inflate(R.layout.util_pull_to_refresh_header_vertical, this);
                 break;
         }
 
@@ -124,7 +124,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
         // If we don't have a user defined drawable, load the default
         if (null == imageDrawable) {
             //imageDrawable = context.getResources().getDrawable(getDefaultDrawableResId());
-            imageDrawable = context.getResources().getDrawable(R.drawable.public_loading1);
+            imageDrawable = context.getResources().getDrawable(R.drawable.util_public_loading1);
         }
 
         // Set Drawable, and save width/height

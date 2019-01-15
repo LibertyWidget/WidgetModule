@@ -61,7 +61,7 @@ public class ToastUtils {
         Toast returnValue = null;
         if (context != null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            View vContent = inflater.inflate(R.layout.common_toast_layout, null);
+            View vContent = inflater.inflate(R.layout.util_common_toast_layout, null);
             TextView tvContent = vContent.findViewById(R.id.tvContent);
             tvContent.setText(info);
             tvContent.bringToFront();

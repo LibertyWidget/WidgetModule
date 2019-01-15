@@ -23,7 +23,7 @@
             android:layout_width="45dip"
             android:layout_height="45dip"
             android:layout_gravity="center"
-            android:background="@drawable/pull_to_refresh_shape">
+            android:background="@drawable/util_pull_to_refresh_shape">
 
             <ProgressBar
                 style="?android:attr/progressBarStyleSmall"
