@@ -37,12 +37,11 @@ public class FileUtils {
         return true;
     }
 
-    public static File createSDDir(String dirName) throws IOException {
+    public static File createSDDir(String dirName) {
         File dir = new File(dirName);
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-
-            System.out.println("createSDDir:" + dir.getAbsolutePath());
-            System.out.println("createSDDir:" + dir.mkdir());
+            dir.getAbsolutePath();
+            dir.mkdir();
         }
         return dir;
     }
