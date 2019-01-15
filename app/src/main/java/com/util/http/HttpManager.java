@@ -34,12 +34,6 @@ public class HttpManager {
     private static volatile HttpManager mInstance;//单利引用
     private OkHttpClient mOkHttpClient;//okHttpClient 实例
 
-    public enum RequestType {
-        GET,//get请求
-        POST_JSON,//post请求参数为json
-        POST_FORM//post请求参数为表单
-    }
-
 
     /**
      * 初始化RequestManager
@@ -77,7 +71,7 @@ public class HttpManager {
      * @param requestType 请求类型
      * @param paramsMap   请求参数
      */
-    public Response requestSync(String actionUrl, RequestType requestType, HashMap<String, String> paramsMap) {
+    public Response requestSync(HttpType requestType, String actionUrl, HashMap<String, String> paramsMap) {
         Response response = null;
         switch (requestType) {
             case GET:
@@ -212,7 +206,7 @@ public class HttpManager {
      * @param paramsMap   请求参数
      * @param callBack    请求返回数据回调
      **/
-    public Call requestAsync(String actionUrl, RequestType requestType, HashMap<String, String> paramsMap, ReqCallBack callBack) {
+    public Call requestAsync(HttpType requestType, String actionUrl, HashMap<String, String> paramsMap, ReqCallBack callBack) {
         Call call = null;
         switch (requestType) {
             case GET:
