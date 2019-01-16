@@ -52,7 +52,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="取消"
+                android:text="@string/cancel"
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_small" />
 
@@ -68,7 +68,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="确定"
+                android:text="@string/confirm"
                 android:textColor="@color/red"
                 android:textSize="@dimen/font_small" />
         </LinearLayout>
