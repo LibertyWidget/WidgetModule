@@ -20,5 +20,5 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
-        android:textSize="12dp" />
+        android:textSize="@dimen/font_min" />
 </LinearLayout>
