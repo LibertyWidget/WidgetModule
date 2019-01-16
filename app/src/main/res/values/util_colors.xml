@@ -5,9 +5,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="yc_ed3269">#ed3269</color>
-    <color name="yc_f05f3e">#f05f3e</color>
-    <color name="yc_8a8a8a">#8a8a8a</color>
     <!-- 6白色透明度色值 100%  95%  70%   50%  30%  15%-->
     <color name="red">#ff4a64</color>
     <color name="orange">#ffa200</color>
@@ -16,14 +13,7 @@
     <color name="deepgray">#6e6e6e</color>
     <color name="lightgray">#a8a8a8</color>
     <color name="spaceline">#c8c8c8</color>
-    <color name="lightspaceline">#e7e7e7</color>
-    <color name="tabbarbackground">#f2f2f2</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
-    <color name="red_version130">#FFFF4A64</color>
-    <color name="alert">#FFF12644</color>
-    <color name="green">#FF19E5B4</color>
-    <color name="content_background">#18181d</color>
-    <color name="sbc_header_text">#ff808080</color>
     <color name="colorLoadingProgressBg">#b1000000</color>
 </resources>
