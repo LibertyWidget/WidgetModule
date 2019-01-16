@@ -218,6 +218,8 @@ public class LoadingDialog {
             if (view == null) return;
             int wrapParam = ViewGroup.LayoutParams.WRAP_CONTENT;
             ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(wrapParam, wrapParam);
+            params.width = 100;
+            params.height = 100;
             mCustomViewContainer.addView(view, params);
         }
 
